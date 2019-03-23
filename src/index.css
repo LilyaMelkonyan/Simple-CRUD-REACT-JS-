@@ -1,14 +1,68 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.menu{
+    background-color: #d3a9ab;
+}
+.menu ul li a{
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}
+.menu ul li a:focus{
+    color: #203139;
+}
+.listInfoDiv{
+    height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #203139;
+}
+.listInfoDiv::-webkit-scrollbar {
+    width: 5px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.listInfoDiv::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.listInfoDiv::-webkit-scrollbar-thumb {
+    background-color: #e5cfd1;
+}
+.listInfoDiv ul li{
+    list-style-type: none;
+}
+.listInfoDiv ul{
+    padding-left: 0;
+}
+.infoUl{
+    padding: 10px 15px;
+    background: #e3e3e3;
+    color: #203139;
+    box-shadow: 2px 0 5px #e5cfd1;
+    border-radius: 7px;
+    margin-top: 5px;
+    word-break: break-word;
+}
+.infoUl .del_edit_btns{
+    position: absolute;
+    top: 0;
+    right: 0
+}
+.infoUl .del_edit_btns button{
+    padding: 0.375rem 0.45rem !important;
+}
+.infoUl .del_edit_btns button:focus{
+    box-shadow: none !important;
+    outline: none !important;
+}
+.alertInfoSpan{
+    padding: 0.25rem 1.25rem !important;
+}
+.formEditAddDiv{
+    background-color: #e3e3e3;
+}
+.table-darkgreen{
+    background-color: #d7d6d2;
+}
+.table-darkgreen tr td,
+.table-darkgreen tr th{
+    color: #262b3e;
 }
