@@ -11,15 +11,17 @@ class View extends Component {
 
     page(e) {
         this.setState({isUserOrPoint: e.target.innerHTML});
+        e.preventDefault();
     }
 
     render() {
+        var linkHref = '#';
         const isUserOrPoint = this.state.isUserOrPoint;
         let page;
         if (isUserOrPoint === 'Users') {
-            page = <User />;
+            page = <User userInfo={this.props.userInfo} />;
         } else {
-            page = <Point />;
+            page = <Point pointInfo={this.props.pointInfo} userInfo={this.props.userInfo} />;
         }
         return (
             <div className="container">
@@ -27,10 +29,10 @@ class View extends Component {
                     <div className='col-12 menu'>
                         <ul className="nav">
                             <li className="nav-item">
-                                <a className="nav-link active" href="#" onClick={(e)=>this.page(e)}>Users</a>
+                                <a className="nav-link active" href={linkHref} onClick={(e)=>this.page(e)}>Users</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#" onClick={(e)=>this.page(e)}>Points</a>
+                                <a className="nav-link" href={linkHref} onClick={(e)=>this.page(e)}>Points</a>
                             </li>
                         </ul>
                     </div>

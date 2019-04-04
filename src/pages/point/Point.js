@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import './point.css';
-import pointInfo from '../../jsons/points';
-import userInfo from '../../jsons/users';
 
 class Point extends Component {
     constructor(props){
         super(props);
         this.state = {
-            userList: userInfo,
-            filterList: pointInfo
+            userList: this.props.userInfo,
+            filterList: this.props.pointInfo
         };
         this.selectUserPoint = this.selectUserPoint.bind(this);
     }
 
     selectUserPoint(e){
-        let filterPointObj = pointInfo.filter( (point, key) => {
+        let filterPointObj = this.props.pointInfo.filter( (point, key) => {
             if (+e.target.value === point.id) {
-                return point
+                return true
+            }else{
+                return false
             }
         });
         this.setState({ filterList: filterPointObj } )
